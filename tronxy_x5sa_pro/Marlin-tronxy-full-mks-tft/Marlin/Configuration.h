@@ -835,9 +835,9 @@
   #else
     // If we did not set specific parameters then we use one of the default one
     #ifndef DEFAULT_Kp
-      #define DEFAULT_Kp  22.20
-      #define DEFAULT_Ki   1.08
-      #define DEFAULT_Kd 114.00
+      #define DEFAULT_Kp  27.23
+      #define DEFAULT_Ki   2.74
+      #define DEFAULT_Kd  67.69
     #endif
   #endif
 #endif // PIDTEMP
@@ -859,7 +859,7 @@
  * heater. If your configuration is significantly different than this and you don't understand
  * the issues involved, don't use bed PID until someone else verifies that your hardware works.
  */
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -877,9 +877,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 10.00
-  #define DEFAULT_bedKi .023
-  #define DEFAULT_bedKd 305.4
+  #define DEFAULT_bedKp 176.91
+  #define DEFAULT_bedKi 27.93
+  #define DEFAULT_bedKd 746.96
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -1145,7 +1145,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 100 }
+#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1158,7 +1158,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 5000 }
+#define DEFAULT_MAX_ACCELERATION      { 6000, 6000, 100, 5000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1404,7 +1404,7 @@
 #ifdef XY2_MODELS
 #define NOZZLE_TO_PROBE_OFFSET { -50, -10, 0 }
 #else
-#define NOZZLE_TO_PROBE_OFFSET { -35, -0, -2.11 }
+#define NOZZLE_TO_PROBE_OFFSET { -37, -0, -2.10 }
 #endif
 
 // Most probes should stay away from the edges of the bed, but
